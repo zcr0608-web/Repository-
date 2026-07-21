@@ -1,2 +1,90 @@
-# Repository-
-一款使用 HTML5、CSS 和 JavaScript 製作的瀏覽器塔防遊戲，支援建塔、Boss 關卡、升級、存檔與特效。
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Tower Defense</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="loading">
+    <h1>Ultimate Tower Defense</h1>
+    <p>Loading...</p>
+</div>
+
+<div id="menu" class="hidden">
+
+    <h1>Ultimate Tower Defense</h1>
+
+    <button id="playBtn">開始遊戲</button>
+    <button id="settingBtn">設定</button>
+
+</div>
+
+<div id="gameUI" class="hidden">
+
+<div id="topbar">
+
+<span id="gold">💰100</span>
+
+<span id="life">❤️20</span>
+
+<span id="wave">Wave 1</span>
+
+</div>
+
+<canvas id="gameCanvas"></canvas>
+
+<div id="shop">
+
+<button data-type="arrow">
+🏹箭塔
+</button>
+
+<button data-type="cannon">
+💣砲塔
+</button>
+
+<button data-type="ice">
+❄️冰塔
+</button>
+
+<button data-type="laser">
+⚡雷射塔
+</button>
+
+</div>
+
+</div>
+
+<div id="gameOver" class="hidden">
+
+<h1>Game Over</h1>
+
+<p id="finalScore"></p>
+
+<button onclick="location.reload()">
+
+重新開始
+
+</button>
+
+</div>
+
+<script src="engine.js"></script>
+<script src="map.js"></script>
+<script src="enemy.js"></script>
+<script src="tower.js"></script>
+<script src="bullet.js"></script>
+<script src="boss.js"></script>
+<script src="effects.js"></script>
+<script src="sound.js"></script>
+<script src="save.js"></script>
+<script src="ui.js"></script>
+<script src="game.js"></script>
+
+</body>
+</html>
