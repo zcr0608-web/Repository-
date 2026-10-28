@@ -98,10 +98,16 @@ public class MobileStrikePrototypeBootstrap : MonoBehaviour
         gun.transform.localPosition = new Vector3(0.28f, -0.25f, 0.55f);
         gun.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
 
+        GameObject pistol = MakeCube("First Person Pistol (prototype)", Vector3.zero, new Vector3(0.13f, 0.13f, 0.34f), new Color(0.18f, 0.19f, 0.2f));
+        pistol.transform.SetParent(cameraObj.transform, false);
+        pistol.transform.localPosition = new Vector3(0.28f, -0.25f, 0.5f);
+        pistol.transform.localRotation = Quaternion.identity;
+        pistol.SetActive(false);
+
         weapon = cameraObj.AddComponent<MobileStrikeWeapon>();
         weapon.playerCamera = cam;
         weapon.recoilPivot = pivot.transform;
-        weapon.weaponVisuals = new GameObject[] { gun };
+        weapon.weaponVisuals = new GameObject[] { gun, pistol };
         weapon.muzzleFlash = null;
     }
 
